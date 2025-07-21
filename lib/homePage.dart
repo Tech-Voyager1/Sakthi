@@ -16,6 +16,20 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(backgroundColor: Color(0xfff66525),
       toolbarHeight: height/10,
       ),
+      body: Container(
+        height: height,
+        width: width,
+        child: Column(
+          children: [
+            Container(
+              height: 180,
+              width: 180,
+              color: Colors.amber,
+            ),
+            TextButton(onPressed:(){}, child:Text("Click here\tto Scan"))
+          ],
+        ),
+      ),
     );
   }
 }
