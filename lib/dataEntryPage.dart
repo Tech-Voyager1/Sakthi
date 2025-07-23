@@ -93,7 +93,7 @@ class _DataentrypageState extends State<Dataentrypage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Box id",
+              "Box ID",
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,

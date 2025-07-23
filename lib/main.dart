@@ -23,7 +23,7 @@ class _SakthiState extends State<Sakthi> {
       theme: ThemeData(fontFamily: 'Poppins'
           // primarySwatch: Colors.blue,
           ),
-      home: QRScanScreen(),
+      home: Dataentrypage(),
     );
   }
 }
