@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sakthi/color.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -13,7 +14,7 @@ class _HomePageState extends State<HomePage> {
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
     return Scaffold(
-      appBar: AppBar(backgroundColor: Color(0xfff66525),
+      appBar: AppBar(backgroundColor: primaryOrange,
       toolbarHeight: height/10,
       ),
       body: Container(

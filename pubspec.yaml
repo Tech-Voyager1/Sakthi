@@ -38,6 +38,7 @@ dependencies:
   url_launcher: ^6.2.6
   #image_picker: ^1.0.4
   file_picker: ^6.1.1
+  #qr_scanner_plus: ^0.1.5+1
 
 
 dev_dependencies:
