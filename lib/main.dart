@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sakthi/dataEntryPage.dart';
-import 'package:sakthi/homePage.dart';
+import 'package:sakthi/homepage.dart';
 import 'package:sakthi/scanner.dart';
-import 'package:sakthi/scannerPage.dart';
+import 'package:sakthi/homepage.dart';
 import 'package:sakthi/splashScreen.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class _SakthiState extends State<Sakthi> {
       theme: ThemeData(fontFamily: 'Poppins'
           // primarySwatch: Colors.blue,
           ),
-      home: Dataentrypage(),
+      home: Splashscreen(),
     );
   }
 }

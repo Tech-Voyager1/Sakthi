@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner_plus/qr_code_scanner_plus.dart';
+import 'package:sakthi/dataEntryPage.dart';
+import 'package:geolocator/geolocator.dart';
 
 class QRScanScreen extends StatefulWidget {
   const QRScanScreen({super.key});
@@ -21,16 +23,44 @@ class _QRScanScreenState extends State<QRScanScreen> {
 
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
+    controller.scannedDataStream.listen((scanData) async {
+      controller.pauseCamera();
 
-    controller.scannedDataStream.listen((scanData) {
-      if (!scanned) {
-        scanned = true;
-        controller.pauseCamera(); // optional: stop camera after scan
-        ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Scanned: ${scanData.code}')),
-        );
-        Navigator.pop(context, scanData.code); // return to previous page
-      }
+      final code = scanData.code ?? '';
+      final uri = Uri.tryParse(code);
+      final boxId = uri?.queryParameters['id'] ?? '';
+
+      //✅ Get current location
+      // bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+      // if (!serviceEnabled) {
+      //   await Geolocator.openLocationSettings();
+      //   return;
+      // }
+
+      // LocationPermission permission = await Geolocator.checkPermission();
+      // if (permission == LocationPermission.denied ||
+      //     permission == LocationPermission.deniedForever) {
+      //   permission = await Geolocator.requestPermission();
+      // }
+
+      // if (permission == LocationPermission.always ||
+      //     permission == LocationPermission.whileInUse) {
+      //   final position = await Geolocator.getCurrentPosition(
+      //       desiredAccuracy: LocationAccuracy.high);
+
+      //   // ✅ Navigate and pass boxId and location
+
+      // }
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Dataentrypage(
+            boxId: boxId,
+            latitude: 11.028323, //position.latitude,
+            longitude: 77.027365, //position.longitude,
+          ),
+        ),
+      );
     });
   }
 
