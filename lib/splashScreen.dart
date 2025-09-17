@@ -35,7 +35,7 @@ class _SplashscreenState extends State<Splashscreen> {
       child: Padding(
         padding: EdgeInsets.only(top: height / 3.3),
         child: Text(
-          "Sakthi\nHackathon 1.0",
+          "Smart\nTracker",
           textAlign: TextAlign.center,
           style: TextStyle(
               color: Colors.white, fontSize: 50, fontWeight: FontWeight.w600),
